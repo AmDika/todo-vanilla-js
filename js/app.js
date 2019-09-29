@@ -15,7 +15,9 @@ function loadEventListeners() {
     document.addEventListener('DOMContentLoaded', getTasks)
     // DOM load event for add todo
     document.addEventListener('submit', addTask)
-    // DOM load ever for filter todo
+    // DOM load event for delete todo
+    document.addEventListener('click', removeTodo)
+    // DOM load event for filter todo
     document.addEventListener('keyup', filterTodos)
 }
 
@@ -84,6 +86,16 @@ function addTask(e) {
 
     e.preventDefault();
 
+}
+
+// Remove todo
+function removeTodo(e) {
+    if (e.target.parentElement.classList.contains('delete-item')) {
+        if (confirm('You are about to delete item, Are you sure?')) {
+            // selecting 2 times of its their own parentElements
+            e.target.parentElement.parentElement.remove();
+        }
+    }
 }
 
 // Filter task
