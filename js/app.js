@@ -53,27 +53,30 @@ function getTasks() {
 
 // Add Task
 function addTask(e) {
-    console.log('test method function')
+    // console.log('test method function')
     if (todoInput.value === '') {
-        alert('add a task')
+        alert('add a Todo')
     }
 
-    // // Create li element
-    // const li = document.createElement('li')
-    // // Add class
-    // li.className = 'collection-item'
-    // // create text node and append to li
-    // li.appendChild(document.createTextNode(taskInput.value));
-    // // create new link element
-    // const link = document.createElement('a')
-    // // adding class for deleting item
-    // link.className = 'delete-item secondary-content'
-    // // add icon html
-    // link.innerHTML = '<i class="fa fa-remove"></i>'
-    // // Append the link to li
-    // li.appendChild(link)
+    // Create li element
+    const li = document.createElement('li')
+    // Add class
+    li.className = 'collection-item'
+    // create text node and append to li
+    li.appendChild(document.createTextNode(todoInput.value));
+    // create new link element
+    const link = document.createElement('a')
+    // adding class for deleting item
+    link.className = 'delete-item secondary-content'
+    // add icon html
+    link.innerHTML = '<i class="fa fa-remove"></i>'
+    // Append the link to li
+    li.appendChild(link)
+    // Append li to ul
+    todoList.appendChild(li);
 
-    // store in localstorage
+    // store in localstorage    
+    console.log(todoInput.value, "check list")
 
     // clear input 
     todoInput.value = '';
