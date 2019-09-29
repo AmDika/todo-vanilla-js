@@ -13,8 +13,10 @@ function loadEventListeners() {
     // console.log("check function")
     // DOM Load event for getting an item
     document.addEventListener('DOMContentLoaded', getTasks)
-    // DOM load event for add task
+    // DOM load event for add todo
     document.addEventListener('submit', addTask)
+    // DOM load ever for filter todo
+    document.addEventListener('keyup', filterTodos)
 }
 
 // Get Task from LocalStorage
@@ -76,11 +78,25 @@ function addTask(e) {
     todoList.appendChild(li);
 
     // store in localstorage    
-    console.log(todoInput.value, "check list")
 
     // clear input 
     todoInput.value = '';
 
     e.preventDefault();
 
+}
+
+// Filter task
+function filterTodos(e) {
+    const text = e.target.value.toLowerCase();
+
+    document.querySelectorAll('.collection-item').forEach(todo => {
+        const item = todo.firstChild.textContent
+        // console.log(item, 'check todo')
+        if (item.toLocaleLowerCase().indexOf(text) != -1) {
+            todo.style.display = 'block'
+        } else {
+            todo.style.display = 'none'
+        }
+    })
 }
