@@ -19,6 +19,8 @@ function loadEventListeners() {
     document.addEventListener('click', removeTodo)
     // DOM load event for filter todo
     document.addEventListener('keyup', filterTodos)
+    // DOM load ever for clear todo
+    document.addEventListener('click', clearTodos)
 }
 
 // Get Task from LocalStorage
@@ -95,6 +97,13 @@ function removeTodo(e) {
             // selecting 2 times of its their own parentElements
             e.target.parentElement.parentElement.remove();
         }
+    }
+}
+// Clear todos
+function clearTodos() {
+    // loop over the firstElement to lastElement
+    while (todoList.firstChild) {
+        todoList.removeChild(todoList.firstChild)
     }
 }
 
