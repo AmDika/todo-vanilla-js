@@ -17,6 +17,8 @@ function loadEventListeners() {
     document.addEventListener('submit', addTask)
     // DOM load ever for filter todo
     document.addEventListener('keyup', filterTodos)
+    // DOM load ever for clear todo
+    document.addEventListener('click', clearTodos)
 }
 
 // Get Task from LocalStorage
@@ -84,6 +86,15 @@ function addTask(e) {
 
     e.preventDefault();
 
+}
+
+// Clear todos
+function clearTodos() {
+    console.log('test function')
+    // loop over the firstElement to lastElement
+    // while (todoList.firstChild) {
+    //     todoList.removeChild(todoList.firstChild)
+    // }
 }
 
 // Filter task

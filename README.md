@@ -1,6 +1,5 @@
 ## Vanilla JS DOM Todo List 
 
-
 ## How to run 
 
 * use liveserver on Visual Studio Code
